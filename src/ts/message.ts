@@ -120,7 +120,7 @@ export function printMessage(fileName: string, exportMap: ExportMap, messageDesc
         canBeUndefined = true;
       }
     }
-    printer.printIndentedLn(`${camelCaseName}${canBeUndefined ? "?" : ""}: ${exportType}${field.getLabel() === FieldDescriptorProto.Label.LABEL_REPEATED ? '[]' : ''};`);
+    printer.printIndentedLn(`${field.getName()}${canBeUndefined ? "?" : ""}: ${exportType}${field.getLabel() === FieldDescriptorProto.Label.LABEL_REPEATED ? '[]' : ''};`);
   });
 
   toObjectType.printLn(`}`);
